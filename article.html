@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infrastructure Project Facilitation Office</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+:root {
+    --primary-blue: #1e40af;
+    --dark-blue: #1e3a8a;
+    --light-blue: #3b82f6;
+    --yellow-accent: #fbbf24;
+    --white: #ffffff;
+    --gray-light: #f5f5f5;
+    --text-dark: #1f2937;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+}
+
+/* Layout Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header Top */
+.header-top {
+    background: var(--dark-blue);
+    color: white;
+    padding: 8px 0;
+    font-size: 14px;
+}
+
+.header-top .container {
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.contact-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.contact-info a {
+    color: white;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+/* Navbar */
+.navbar {
+    background: linear-gradient(135deg, var(--dark-blue), var(--primary-blue));
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    height: 60px;
+    width: auto;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-menu a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.nav-menu a:hover {
+    color: var(--yellow-accent);
+}
+
+
+/* Content Section */
+.section {
+    padding: 80px 0;
+}
+
+.section-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.text-content p {
+    margin: 15px 0;
+    font-size: 1.1rem;
+    text-align: justify;
+}
+
+.text-content ul {
+    margin: 10px 0;
+    padding-left: 30px;
+}
+
+.text-content li {
+    font-size: 1.1rem;
+}
+
+.text-content h3 {
+    margin-top: 30px;
+    font-size: 1.5rem;
+    color: var(--dark-blue);
+}
+
+
+/* Button */
+.see-more-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--primary-blue);
+    color: var(--white);
+    padding: 12px 30px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: 40px;
+    transition: all 0.3s ease;
+}
+
+.see-more-btn:hover {
+    background: var(--light-blue);
+}
+
+/* Footer */
+.footer {
+    background: var(--gray-light);
+    padding: 60px 0 30px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-section h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    color: var(--dark-blue);
+}
+
+.footer-section img {
+    max-width: 200px;
+    height: auto;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-links a {
+    color: var(--text-dark);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-links a:hover {
+    color: var(--primary-blue);
+}
+
+.social-links {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--text-dark);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.social-link:hover {
+    color: var(--primary-blue);
+}
+
+.social-link i {
+    width: 20px;
+    font-size: 20px;
+}
+
+/* Mobile Navigation */
+.mobile-nav {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--dark-blue);
+    padding: 15px;
+    z-index: 1000;
+    border-top: 2px solid white;
+}
+
+.mobile-nav-items {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.mobile-nav-item {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    font-size: 12px;
+}
+
+
+.mobile-nav-item.active {
+    color: var(--yellow-accent);
+}
+
+.mobile-nav-item i {
+    font-size: 18px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .nav-menu { display: none; }
+    .mobile-nav { display: block; }
+
+    .section { padding: 50px 0; }
+    .text-content p,
+    .text-content li { font-size: 1rem; }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .header-top .container {
+        justify-content: center;
+        gap: 15px;
+        font-size: 12px;
+    }
+
+    .contact-info {
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .container { padding: 0 15px; }
+}
+    </style>
+</head>
+<body>
+    <!-- Header Top -->
+    <div class="header-top">
+        <div class="container">
+            <div class="contact-info">
+                <i class="fas fa-envelope"></i>
+                <a href="mailto:lorem@ipsum@gmail.com">lorem@ipsum@gmail.com</a>
+            </div>
+            <div class="contact-info">
+                <i class="fab fa-instagram"></i>
+                <a href="https://www.instagram.com/instagram/" target="_blank">username.instagram</a>
+            </div>
+            <div class="contact-info">
+                <i class="fab fa-whatsapp"></i>
+                <a href="https://wa.me/6281513551997">+6281513551997</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-container">
+                <div class="logo">
+                    <img src="https://placehold.co/300x200" alt="Secondary Logo">
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#project">Project Catalogue</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                    <li><a href="#news">News & Updates</a></li>
+                    <li><a href="#login">Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- content Section -->
+    <section id="content" class="section">
+        <div class="container">
+            <div class="section-content">
+                <div class="text-content">
+                    <h1>News Title - Lorem ipsum dolor sit amet, consectetur adipiscing elit. </h1>
+                </div>
+                <div class="image-content">
+                    <div style="display: flex; justify-content: center; align-items: center; height: 100%; padding-bottom: 40px;">
+                        <img src="https://placehold.co/600x400" alt="Catalogue Image" style="width:70%; border-radius: 15px;">
+                    </div></div>
+                </div>
+                <div class="text-content">
+
+                    <h3>News Section</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse aliquet fermentum accumsan. Donec porttitor, nibh a mollis sagittis, lectus sapien placerat dui, scelerisque posuere ligula turpis maximus tellus. Nam sit amet vestibulum augue. Donec lacinia consectetur libero, non pulvinar risus auctor quis. Nullam vulputate ex nec lectus convallis, id placerat ipsum fermentum. Aliquam convallis rutrum nisi tempor auctor. Pellentesque ex nibh, facilisis sit amet lorem non, ultricies tempor lacus. Morbi gravida dolor enim, vitae feugiat leo porttitor sed. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus euismod dictum nisl, in feugiat augue posuere sed. Sed mattis justo volutpat, efficitur nisi eget, consequat neque</p>
+                    <p>Phasellus sagittis ex quis ipsum elementum, quis bibendum sapien finibus. In vehicula quis dui sed pulvinar. Mauris non condimentum eros. Duis et sollicitudin elit. Nunc vestibulum tempor ligula, et iaculis mauris euismod ac. Phasellus elementum tellus sed nulla aliquam sagittis. Pellentesque lobortis fringilla magna, eget tristique nulla congue ut. Nullam nulla elit, gravida a gravida eget, hendrerit vel erat. Ut scelerisque tortor vel purus tristique fringilla. Praesent a purus sit amet metus imperdiet ultrices. In pellentesque eu nisl eu sodales. Quisque in convallis urna. Donec volutpat arcu et lorem commodo, dictum vestibulum sem elementum. Curabitur congue felis eu libero venenatis consequat. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed vehicula diam aliquam, consectetur nisl ut, ultricies augue.</p>
+
+                    <h3>News Section</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse aliquet fermentum accumsan. Donec porttitor, nibh a mollis sagittis, lectus sapien placerat dui, scelerisque posuere ligula turpis maximus tellus. Nam sit amet vestibulum augue. Donec lacinia consectetur libero, non pulvinar risus auctor quis. Nullam vulputate ex nec lectus convallis, id placerat ipsum fermentum. Aliquam convallis rutrum nisi tempor auctor. Pellentesque ex nibh, facilisis sit amet lorem non, ultricies tempor lacus. Morbi gravida dolor enim, vitae feugiat leo porttitor sed. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus euismod dictum nisl, in feugiat augue posuere sed. Sed mattis justo volutpat, efficitur nisi eget, consequat neque</p>
+                    <p>Phasellus sagittis ex quis ipsum elementum, quis bibendum sapien finibus. In vehicula quis dui sed pulvinar. Mauris non condimentum eros. Duis et sollicitudin elit. Nunc vestibulum tempor ligula, et iaculis mauris euismod ac. Phasellus elementum tellus sed nulla aliquam sagittis. Pellentesque lobortis fringilla magna, eget tristique nulla congue ut. Nullam nulla elit, gravida a gravida eget, hendrerit vel erat. Ut scelerisque tortor vel purus tristique fringilla. Praesent a purus sit amet metus imperdiet ultrices. In pellentesque eu nisl eu sodales. Quisque in convallis urna. Donec volutpat arcu et lorem commodo, dictum vestibulum sem elementum. Curabitur congue felis eu libero venenatis consequat. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed vehicula diam aliquam, consectetur nisl ut, ultricies augue.</p>
+
+
+                </div>
+                <div class="text-center">
+                    <a href="#" class="see-more-btn">
+                        Additional link <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Hosted By</h3>
+                    <img src="https://placehold.co/400x400" alt="Logo">
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Our Office</h3>
+                    <div class="footer-links">
+                        <a href="https://maps.app.goo.gl/5Bc29N67AavQEYrf8" target="_blank">
+                            <i class="fas fa-map-marker-alt"></i>
+                            Alamat lengkap kantor lorem ipsum dolor sit amet, consectetur adipiscing elit
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <div class="footer-links">
+                        <a href="mailto:lorem.ipsum@gmail.com">
+                            <i class="fas fa-envelope"></i>
+                            lorem.ipsum@gmail.com
+                        </a>
+                        <a href="https://wa.me/6281513551997">
+                            <i class="fab fa-whatsapp"></i>
+                            +6281513551997
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="https://www.youtube.com/@loremipsum" target="_blank" class="social-link">
+                            <i class="fab fa-youtube"></i>
+                            @loremipsum
+                        </a>
+                        <a href="https://www.instagram.com/username.instagram/" target="_blank" class="social-link">
+                            <i class="fab fa-instagram"></i>
+                            username.instagram
+                        </a>
+                        <a href="https://www.facebook.com/username.facebook/" target="_blank" class="social-link">
+                            <i class="fab fa-facebook"></i>
+                            username.facebook
+                        </a>
+                        <a href="https://www.tiktok.com/@username.tiktok" target="_blank" class="social-link">
+                            <i class="fab fa-tiktok"></i>
+                            @username.tiktok
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav">
+        <div class="mobile-nav-items">
+            <a href="#home" class="mobile-nav-item">
+                <i class="fas fa-home"></i>
+                Home
+            </a>
+            <a href="#project" class="mobile-nav-item active">
+                <i class="fas fa-folder-open"></i>
+                Project Catalogue
+            </a>
+            <a href="#contact" class="mobile-nav-item">
+                <i class="fas fa-envelope"></i>
+                Contact Us
+            </a>
+            <a href="#news" class="mobile-nav-item">
+                <i class="fas fa-newspaper"></i>
+                News & Updates
+            </a>
+            <a href="#login" class="mobile-nav-item">
+                <i class="fas fa-sign-in-alt"></i>
+                Login
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Mobile menu toggle (placeholder for future implementation)
+        document.querySelector('.mobile-menu-toggle').addEventListener('click', function() {
+            // Add mobile menu implementation here
+            console.log('Mobile menu toggle clicked');
+        });
+
+        // Add scroll effect to navbar
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 100) {
+                navbar.style.background = 'linear-gradient(135deg, rgba(30, 58, 138, 0.95), rgba(30, 64, 175, 0.95))';
+                navbar.style.backdropFilter = 'blur(10px)';
+            } else {
+                navbar.style.background = 'linear-gradient(135deg, var(--dark-blue), var(--primary-blue))';
+                navbar.style.backdropFilter = 'none';
+            }
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections for animations
+        document.querySelectorAll('.section-content').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(30px)';
+            section.style.transition = 'opacity 0.8s ease-out, transform 0.8s ease-out';
+            observer.observe(section);
+        });
+
+        // Add loading animation
+        window.addEventListener('load', function() {
+            document.body.style.opacity = '1';
+        });
+
+        // Initialize page
+        document.body.style.opacity = '0';
+        document.body.style.transition = 'opacity 0.5s ease-in';
+    </script>
+</body>
+</html>
