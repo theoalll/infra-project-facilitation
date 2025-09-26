@@ -109,6 +109,22 @@
             color: var(--yellow-accent);
         }
 
+        .nav-menu a.active {
+            color: var(--yellow-accent);
+            position: relative;
+        }
+
+        .nav-menu a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--yellow-accent);
+        }
+
+
         .mobile-menu-toggle {
             display: none;
             background: none;
@@ -793,7 +809,7 @@
                     <img src="https://placehold.co/300x200" alt="Secondary Logo">
                 </div>
                 <ul class="nav-menu">
-                    <li><a href="#home">Home</a></li>
+                    <li><a href="#home" class="active">Home</a></li>
                     <li><a href="#project">Project Catalogue</a></li>
                     <li><a href="#contact">Contact Us</a></li>
                     <li><a href="#news">News & Updates</a></li>
