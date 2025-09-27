@@ -120,6 +120,261 @@ body {
     background: var(--yellow-accent);
 }
 
+/* News Metadata Styling */
+.news-meta {
+    background: var(--white);
+    overflow: hidden;
+}
+
+.news-meta-content {
+    padding: 30px;
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+/* Date Section */
+.news-date {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-shrink: 0;
+    position: relative;
+}
+
+.news-date::after {
+    content: '';
+    position: absolute;
+    right: -15px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1px;
+    height: 60px;
+    background: linear-gradient(to bottom, transparent, var(--primary-blue), transparent);
+}
+
+.date-day {
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--primary-blue);
+    line-height: 1;
+    text-shadow: 0 2px 4px rgba(30, 64, 175, 0.1);
+}
+
+.date-month-year {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+}
+
+.date-month {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--primary-blue);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    line-height: 1;
+}
+
+.date-year {
+    font-size: 0.95rem;
+    color: var(--gray-medium);
+    font-weight: 600;
+    line-height: 1;
+}
+
+/* News Info Section */
+.news-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.news-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 25px;
+    line-height: 1.4;
+    word-wrap: break-word;
+    background: linear-gradient(135deg, var(--text-dark), var(--primary-blue));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* News Details */
+.news-details {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.news-author {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--text-dark);
+    font-size: 0.95rem;
+    padding: 8px 16px;
+    background: rgba(30, 64, 175, 0.05);
+    border-radius: 25px;
+    border: 1px solid rgba(30, 64, 175, 0.1);
+}
+
+.news-author i {
+    color: var(--primary-blue);
+    font-size: 1rem;
+}
+
+.news-author strong {
+    color: var(--primary-blue);
+}
+
+/* Tags */
+.news-tags {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.tag {
+    background: linear-gradient(135deg, var(--light-blue), var(--primary-blue));
+    color: white;
+    padding: 8px 16px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.tag::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.5s;
+}
+
+.tag:hover::before {
+    left: 100%;
+}
+
+.tag:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+}
+
+.tag:active {
+    transform: translateY(0);
+}
+
+/* Views */
+.news-views {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--text-dark);
+    font-size: 0.95rem;
+    padding: 8px 16px;
+    background: rgba(107, 114, 128, 0.05);
+    border-radius: 25px;
+    border: 1px solid rgba(107, 114, 128, 0.1);
+}
+
+.news-views i {
+    color: var(--primary-blue);
+    font-size: 1rem;
+}
+
+.news-views strong {
+    color: var(--primary-blue);
+    font-weight: 700;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .news-meta-content {
+        flex-direction: column;
+        gap: 25px;
+        padding: 25px;
+    }
+
+    .news-date {
+        align-self: flex-start;
+        gap: 12px;
+    }
+
+    .news-date::after {
+        display: none;
+    }
+
+    .date-day {
+        font-size: 2.5rem;
+    }
+
+    .news-title {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+    }
+
+    .news-details {
+        gap: 15px;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    .news-tags {
+        gap: 10px;
+        width: 100%;
+    }
+
+    .tag {
+        font-size: 0.8rem;
+        padding: 6px 14px;
+    }
+
+    .news-author,
+    .news-views {
+        font-size: 0.9rem;
+        padding: 6px 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 20px 10px;
+    }
+
+    .news-meta-content {
+        padding: 20px;
+    }
+
+    .date-day {
+        font-size: 2.2rem;
+    }
+
+    .news-title {
+        font-size: 1.3rem;
+    }
+
+    .date-month {
+        font-size: 1rem;
+    }
+
+    .date-year {
+        font-size: 0.9rem;
+    }
+}
 
 
 /* Content Section */
@@ -346,14 +601,42 @@ body {
     <section id="content" class="section">
         <div class="container">
             <div class="section-content">
-                <div class="text-content">
-                    <h1>News Title - Lorem ipsum dolor sit amet, consectetur adipiscing elit. </h1>
-                </div>
+                <!-- News Image Section -->
                 <div class="image-content">
                     <div style="display: flex; justify-content: center; align-items: center; height: 100%; padding-bottom: 40px;">
-                        <img src="https://placehold.co/600x400" alt="Catalogue Image" style="width:70%; border-radius: 15px;">
+                        <img src="https://placehold.co/1080x480" alt="Catalogue Image" style="width:100%; border-radius: 15px;">
                     </div></div>
                 </div>
+
+                <!-- News Metadata Section -->
+                <div class="news-meta">
+                    <div class="news-date">
+                        <span class="date-day">12</span>
+                        <div class="date-month-year">
+                            <span class="date-month">JUN</span>
+                            <span class="date-year">2025</span>
+                        </div>
+                    </div>
+                    <div class="news-info">
+                        <h2 class="news-title">News Title - Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h2>
+                        <div class="news-details">
+                            <div class="news-author">
+                                <i class="fas fa-user"></i>
+                                <span>By <strong>Author</strong></span>
+                            </div>
+                            <div class="news-tags">
+                                <a href="#" class="tag">#Tag1LoremIpsum</a>
+                                <a href="#" class="tag">#Tag2LoremIpsum</a>
+                                <a href="#" class="tag">#Tag3LoremIpsum</a>
+                            </div>
+                            <div class="news-views">
+                                <i class="fas fa-eye"></i>
+                                <span><strong>1000</strong> View</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="text-content">
 
                     <h3>News Section</h3>
