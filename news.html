@@ -120,6 +120,31 @@ body {
     background: var(--yellow-accent);
 }
 
+/* Page Header */
+.page-header {
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7)), url('https://infrastructureconference.id/assets/images/background-banner.jpg');
+    padding: 60px 0;
+    color: white;
+    text-align: center;
+}
+
+.page-header h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+.page-header .breadcrumb {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+.page-header .breadcrumb a {
+    color: var(--yellow-accent);
+    text-decoration: none;
+}
+
 /* News Metadata Styling */
 .news-meta {
     background: var(--white);
@@ -566,7 +591,7 @@ body {
         <div class="container">
             <div class="nav-container">
                 <div class="logo">
-                    <img src="https://infrastructureconference.id/assets/images/logo-kemenkoinfra.png" alt="Secondary Logo">
+                    <img src="https://i.imgur.com/PsjsTEv.png" alt="Secondary Logo">
                 </div>
                 <ul class="nav-menu">
                     <li><a href="#home">Home</a></li>
@@ -577,18 +602,18 @@ body {
             </div>
         </div>
     </nav>
+    
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>News & Updates</h1>
+        </div>
+    </section>
 
     <!-- content Section -->
     <section id="content" class="section">
         <div class="container">
             <div class="section-content">
-                <!-- News Image Section -->
-                <div class="image-content">
-                    <div style="display: flex; justify-content: center; align-items: center; height: 100%; padding-bottom: 40px;">
-                        <img src="https://placehold.co/1080x480" alt="Catalogue Image" style="width:100%; border-radius: 15px;">
-                    </div></div>
-                </div>
-
                 <!-- News Metadata Section -->
                 <div class="news-meta">
                     <div class="news-date">
@@ -599,39 +624,45 @@ body {
                         </div>
                     </div>
                     <div class="news-info">
-                        <h2 class="news-title">News Title - Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h2>
+                        <h2 class="news-title">Akselerasi Investasi Pembangunan Infrastruktur, Menko AHY Umumkan Pembentukan Project Facilitation Office</h2>
                         <div class="news-details">
                             <div class="news-author">
                                 <i class="fas fa-user"></i>
                                 <span>By <strong>Author</strong></span>
                             </div>
                             <div class="news-tags">
-                                <a href="#" class="tag">#Tag1LoremIpsum</a>
-                                <a href="#" class="tag">#Tag2LoremIpsum</a>
-                                <a href="#" class="tag">#Tag3LoremIpsum</a>
-                            </div>
-                            <div class="news-views">
-                                <i class="fas fa-eye"></i>
-                                <span><strong>1000</strong> View</span>
+                                <a href="#" class="tag">#IPFO</a>
+                                <a href="#" class="tag">#Kemenkoinfra</a>
+                                <a href="#" class="tag">#Infrastructure</a>
                             </div>
                         </div>
                     </div>
                 </div>
+                <!-- News Image Section -->
+                <div class="image-content">
+                    <div style="display: flex; justify-content: center; align-items: center; height: 100%; padding-bottom: 40px;">
+                        <img src="https://kemenkoinfra.go.id/uploads/galeri_post/20250616103138-2025-06-16galeri_post103137.jpeg" alt="Catalogue Image" style="width:80%; border-radius: 15px;">
+                    </div></div>
+                </div>
+
 
                 <div class="text-content">
 
-                    <h3>News Section</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse aliquet fermentum accumsan. Donec porttitor, nibh a mollis sagittis, lectus sapien placerat dui, scelerisque posuere ligula turpis maximus tellus. Nam sit amet vestibulum augue. Donec lacinia consectetur libero, non pulvinar risus auctor quis. Nullam vulputate ex nec lectus convallis, id placerat ipsum fermentum. Aliquam convallis rutrum nisi tempor auctor. Pellentesque ex nibh, facilisis sit amet lorem non, ultricies tempor lacus. Morbi gravida dolor enim, vitae feugiat leo porttitor sed. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus euismod dictum nisl, in feugiat augue posuere sed. Sed mattis justo volutpat, efficitur nisi eget, consequat neque</p>
-                    <p>Phasellus sagittis ex quis ipsum elementum, quis bibendum sapien finibus. In vehicula quis dui sed pulvinar. Mauris non condimentum eros. Duis et sollicitudin elit. Nunc vestibulum tempor ligula, et iaculis mauris euismod ac. Phasellus elementum tellus sed nulla aliquam sagittis. Pellentesque lobortis fringilla magna, eget tristique nulla congue ut. Nullam nulla elit, gravida a gravida eget, hendrerit vel erat. Ut scelerisque tortor vel purus tristique fringilla. Praesent a purus sit amet metus imperdiet ultrices. In pellentesque eu nisl eu sodales. Quisque in convallis urna. Donec volutpat arcu et lorem commodo, dictum vestibulum sem elementum. Curabitur congue felis eu libero venenatis consequat. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed vehicula diam aliquam, consectetur nisl ut, ultricies augue.</p>
-
-                    <h3>News Section</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse aliquet fermentum accumsan. Donec porttitor, nibh a mollis sagittis, lectus sapien placerat dui, scelerisque posuere ligula turpis maximus tellus. Nam sit amet vestibulum augue. Donec lacinia consectetur libero, non pulvinar risus auctor quis. Nullam vulputate ex nec lectus convallis, id placerat ipsum fermentum. Aliquam convallis rutrum nisi tempor auctor. Pellentesque ex nibh, facilisis sit amet lorem non, ultricies tempor lacus. Morbi gravida dolor enim, vitae feugiat leo porttitor sed. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus euismod dictum nisl, in feugiat augue posuere sed. Sed mattis justo volutpat, efficitur nisi eget, consequat neque</p>
-                    <p>Phasellus sagittis ex quis ipsum elementum, quis bibendum sapien finibus. In vehicula quis dui sed pulvinar. Mauris non condimentum eros. Duis et sollicitudin elit. Nunc vestibulum tempor ligula, et iaculis mauris euismod ac. Phasellus elementum tellus sed nulla aliquam sagittis. Pellentesque lobortis fringilla magna, eget tristique nulla congue ut. Nullam nulla elit, gravida a gravida eget, hendrerit vel erat. Ut scelerisque tortor vel purus tristique fringilla. Praesent a purus sit amet metus imperdiet ultrices. In pellentesque eu nisl eu sodales. Quisque in convallis urna. Donec volutpat arcu et lorem commodo, dictum vestibulum sem elementum. Curabitur congue felis eu libero venenatis consequat. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed vehicula diam aliquam, consectetur nisl ut, ultricies augue.</p>
-
-
+                    <p>JAKARTA - Menteri Koordinator Bidang Infrastruktur dan Pembangunan Kewilayahan, Agus Harimurti Yudhoyono (Menko AHY), mengumumkan langkah konkret pemerintah untuk mempercepat investasi infrastruktur nasional melalui pembentukan Project Facilitation Office. Hal ini disampaikannya dalam penutupan International Conference on Infrastructure (ICI) yang digelar di Jakarta International Convention Center (JICC), Kamis (12/6/2025).</p>
+                    <p>“Implementasinya, kami akan kerja sama dengan Kementerian Investasi dan Hilirisasi juga BKPM serta kementerian lainnya untuk membentuk semacam Project Facilitation Office sebagai pusat akselerasi investasi infrastruktur,” kata Menko AHY dihadapan Presiden Prabowo dan pejabat, penguasaha dalam dan luar negeri.</p>
+                    <p>Menko AHY menjelaskan bahwa inisiatif ini terinspirasi dari berbagai praktik terbaik di dunia, seperti yang diterapkan di Singapura, Hong Kong, dan Australia.</p>
+                    <p>Pembentukan Project Facilitation Office merupakan bagian dari prioritas kelima dalam agenda strategis infrastruktur nasional, yaitu Financing Reform for Sustainable Infrastructure. Menko AHY menyampaikan bahwa arahan Presiden Prabowo Subianto adalah menggeser paradigma pembangunan dari model birokratis ke arah kolaboratif, dengan menekankan peran sektor swasta dan pembiayaan inovatif.</p>
+                    <p>“Kita mendorong skema KPBU, Green Bonds, dan Blended Finance. Bukan hanya mencari dana, tetapi mengundang mitra-mitra strategis untuk membangun bersama,” ujarnya.</p>
+                    <p>Konferensi ICI 2025 mengangkat tema Sustainable Infrastructure for the Future: Innovation and Collaboration, yang menurut Menko AHY mencerminkan filosofi pembangunan di bawah kepemimpinan Presiden Prabowo. </p>
+                    <p>“Tema ini bukan hanya relevan tetapi mencerminkan filosofi pembangunan di bawah kepemimpinan Bapak Presiden yang menggabungkan keadilan sosial, kedaulatan nasional dan juga keberlanjutan,” ungkapnya.</p>
+                    <p>Sebagai tindak lanjut konkret dari ICI 2025, pemerintah juga meluncurkan Project Catalog 2025 yang menawarkan sekitar 40 proyek infrastruktur strategis. Proyek-proyek tersebut mencakup sektor transportasi, energi, air, pengelolaan sampah, perumahan, dan kota cerdas.
+                    <p>“Kami tidak sekedar mengundang investasi, tapi mengundang kemitraan jangka panjang dalam semangat gotong royong global. Khusus pesisir utara Jawa, utamanya Jakarta,” kata Menko AHY.</p>
+                    <p>Konferensi ICI 2025 dihadiri oleh jajaran Menteri dan Wakil Menteri Kabinet Merah Putih, Duta Besar negara-negara sahabat, anggota DPR/MPR dan DPD RI, para Gubernur dan Wakil Gubernur, Wali Kota dan Wakil Wali Kota, Bupati dan Wakil Bupati, serta delegasi, para pemimpin dunia usaha, dan mitra pembangunan dari lintas negara.</p>
+                    <p>Konferensi infrastruktur pertama berskala internasional di Indonesia ini dihadiri 7.000 peserta lebih dari 33 negara partisipan, termasuk Indonesia, Amerika Serikat, Australia, Belanda, Jepang, Kanada, Korea Selatan, Norwegia, Uni Emirat Arab, Tiongkok, Uni Eropa, Spanyol, Vietnam, Iran, Singapura, Turki, Hungaria, Myanmar, Denmark, Prancis, Inggris, Rusia, Jerman, Uruguay, Finlandia, Swiss, dan Azerbaijan.</p>
+                    <p>ICI 2025 akan menjadi panggung penting bagi kolaborasi internasional, dengan kehadiran berbagai investor dan lembaga pembiayaan terkemuka, seperti Macquarie (Australia), GIC (Singapura), World Bank, International Finance Corporation (IFC), Asian Development Bank (ADB), dan The Asia Group.</p>
                 </div>
                 <div class="text-center">
-                    <a href="#" class="see-more-btn">
+                    <a href="#home" class="see-more-btn">
                         Additional link <i class="fas fa-arrow-right"></i>
                     </a>
                 </div>
