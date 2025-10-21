@@ -136,7 +136,7 @@
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7)), url('https://i.imgur.com/TgQ8ML8.jpeg');
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7)), url('https://i.imgur.com/4fvjZKl.jpeg');
             background-size: cover;
             background-position: top;
             min-height: 100vh;
@@ -279,11 +279,34 @@
         }
 
         .ministers-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            display: flex;
             gap: 30px;
-            margin-top: 40px;
-            justify-items: center;
+            /* margin-top: 40px; */
+            margin-left: 40px;
+            margin-right: 40px;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            padding: 10px 0 30px 0;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .ministers-grid::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .ministers-grid::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+        }
+
+        .ministers-grid::-webkit-scrollbar-thumb {
+            background: var(--yellow-accent);
+            border-radius: 10px;
+        }
+
+        .ministers-grid::-webkit-scrollbar-thumb:hover {
+            background: #f59e0b;
         }
 
         .speaker-card {
@@ -292,7 +315,8 @@
             background: rgba(255,255,255,0.1);
             border-radius: 15px;
             transition: transform 0.3s ease;
-            width: 250px;
+            width: 350px;
+            min-width: 245px;
             max-width: 100%;
             margin: 0 auto;
         }
@@ -715,7 +739,6 @@
                         <div class="speaker-name">Djuang Fadjar Sodikin</div>
                         <div class="speaker-title">Director - Regulatory and Permit Support</div>
                     </div>
-
                 </div>
                 
                 <div class="text-center">
